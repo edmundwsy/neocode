@@ -7,15 +7,15 @@ function M.theme()
         -- transparent = false,
 
         -- theme = 'catppuccin'
-        -- transparent =true 
+        -- transparent =true,
+	
+        theme = 'github',
+        style = 'dark', 'dark_default', 'dimmed', 'light', 'light_default',
+        transparent = false,
 
-        [[theme = 'github'
-        style = 'dark', 'dark_default', 'dimmed', 'light', 'light_default'
-        transparent = false]]
-
-        -- style = 'darker', 'lighter', 'oceanic', 'palenight', 'deep ocean'
-        -- theme = 'material'
-        -- transparent = false 
+        -- style = 'darker', 'lighter', 'oceanic', 'palenight', 'deep ocean',
+        -- theme = 'material',
+        -- transparent = true,
 
         -- theme = 'onedark'
         -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'

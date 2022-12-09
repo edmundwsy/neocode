@@ -31,12 +31,12 @@ function M.setup()
             ["<C-n>"] = cmp.mapping.select_next_item(),
             ["<C-u>"] = cmp.mapping.scroll_docs(-4),
             ["<C-d>"] = cmp.mapping.scroll_docs(4),
-            ["<CR>"] = cmp.mapping.confirm({
+            ["<Tab>"] = cmp.mapping.confirm({
                 behavior = cmp.ConfirmBehavior.Insert,
                 select = false,
             }),
-            ["<Tab>"] = cmp.mapping(handle.jump_next, { "i", "s" }),
-            ["<S-Tab>"] = cmp.mapping(handle.jump_previous, { "i", "s" }),
+            ["<S-Tab>"] = cmp.mapping(handle.jump_next, { "i", "s" }),
+            ["<C-Tab>"] = cmp.mapping(handle.jump_previous, { "i", "s" }),
         },
         snippet = {
             expand = function(args)
