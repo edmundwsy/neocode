@@ -2,20 +2,20 @@ local M = {}
 
 function M.theme()
     return {
-        theme = "tokyonight",
-        style = "storm",
-        transparent = false,
+        -- theme = "tokyonight",
+        -- style = "storm",
+        -- transparent = false,
 
         -- theme = 'catppuccin'
-        -- transparent = false
+        -- transparent =true 
 
-        -- theme = 'github'
-        -- style = 'dark', 'dark_default', 'dimmed', 'light', 'light_default'
-        -- transparent = false
+        [[theme = 'github'
+        style = 'dark', 'dark_default', 'dimmed', 'light', 'light_default'
+        transparent = false]]
 
-        -- theme = 'material'
         -- style = 'darker', 'lighter', 'oceanic', 'palenight', 'deep ocean'
-        -- transparent = false
+        -- theme = 'material'
+        -- transparent = false 
 
         -- theme = 'onedark'
         -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
@@ -28,7 +28,7 @@ function M.theme()
 end
 
 function M.setup()
-    vim.g.mapleader = "["
+    vim.g.mapleader = " "
 
     local options = require("nvim.options")
     local option, buffer, window = options.scope.option, options.scope.buffer, options.scope.window

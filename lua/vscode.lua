@@ -4,7 +4,7 @@ local M = {
 
 function M.configure()
     -- settings
-    vim.g.mapleader = "["
+    vim.g.mapleader = " "
 
     local options = require("nvim.options")
     local option = options.scope.option
@@ -28,8 +28,9 @@ function M.configure()
         ["gr"] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
         ["gx"] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
 
-        ["<leader>k"] = [[<cmd>HopChar1<cr>]],
-        ["<leader>l"] = [[<cmd>HopLine<cr>]],
+        ["<leader>l"] = [[<cmd>HopChar1<cr>]],
+        ["<leader>k"] = [[<cmd>HopLine<cr>]],
+        ["<leader>j"] = [[<cmd>HopLine<cr>]],
         ["<leader>w"] = [[<cmd>HopWord<cr>]],
     })
 end

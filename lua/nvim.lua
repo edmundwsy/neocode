@@ -92,12 +92,12 @@ function M.register_packages(use)
         end,
     })
 
-    use({
+    --[[ use({
         "folke/todo-comments.nvim",
         config = function()
             require("todo-comments").setup({})
         end,
-    })
+    }) ]]
     use({
         "norcalli/nvim-colorizer.lua",
         config = function()
@@ -132,6 +132,14 @@ function M.register_packages(use)
         "folke/zen-mode.nvim",
         config = function()
             require("zen-mode").setup({})
+        end,
+    })
+
+    use({
+        'goolord/alpha-nvim',
+        config = function()
+            require("startup.plugin_alpha")
+             -- require('alpha').setup(require('alpha.themes.dashboard').config)
         end,
     })
 
@@ -183,6 +191,10 @@ function M.register_packages(use)
         end,
     })
     use({ "nvim-telescope/telescope-fzf-native.nvim", run = "make" })
+    use({ "nvim-telescope/telescope-project.nvim"})
+    use({ "kkharji/sqlite.lua" })
+    use({ "nvim-telescope/telescope-frecency.nvim", require = {"kkharji/sqlite.lua"}})
+    use({ "jvgrootveld/telescope-zoxide", require = {"nvim-telescope/telescope-frecency"}})
 
     use({
         "907th/vim-auto-save",
