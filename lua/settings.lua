@@ -6,7 +6,7 @@ function M.theme()
         -- style = "storm",
         -- transparent = false,
 
-        -- theme = 'catppuccin'
+        -- theme = 'catppuccin',
         -- transparent =true,
 	
         theme = 'github',
@@ -15,15 +15,11 @@ function M.theme()
 
         -- style = 'darker', 'lighter', 'oceanic', 'palenight', 'deep ocean',
         -- theme = 'material',
-        -- transparent = true,
+        -- transparent = false,
 
         -- theme = 'onedark'
-        -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light'
-        -- transparent = false
-
-        -- theme = 'tokyonight'
-        -- style = 'storm', 'night', 'day'
-        -- transparent = false
+        -- style = 'dark', 'darker', 'cool', 'deep', 'warm', 'warmer', 'light',
+        -- transparent = false,
     }
 end
 

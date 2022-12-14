@@ -20,6 +20,7 @@ function M.setup()
                     nvim_lsp = "[lsp]",
                     nvim_lua = "[lua]",
                     path = "[path]",
+                    copilot = '[]'
                 })[entry.source.name]
 
                 return vim_item
@@ -49,6 +50,7 @@ function M.setup()
             { name = "nvim_lua" },
             { name = "path" },
             { name = "buffer" },
+			{ name = "copilot" },
         },
     })
 end

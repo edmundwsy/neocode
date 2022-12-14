@@ -44,10 +44,12 @@ function M.register_packages(use)
     })
 
     use("rafamadriz/friendly-snippets")
-    use({
-        "b3nj5m1n/kommentary",
+    use({"b3nj5m1n/kommentary",
         config = function()
-            require("kommentary.config")
+            require("kommentary.config").configure_language("default", {
+                prefer_single_line_comments = true,
+                use_consistent_indentation = true,
+            })  
         end,
     })
     use({
@@ -57,6 +59,23 @@ function M.register_packages(use)
         end,
         after = "nvim-cmp",
     })
+    use ({
+      "zbirenbaum/copilot.lua",
+      event = "VimEnter",
+      config = function()
+        vim.defer_fn(function()
+              require("copilot").setup()
+        end, 100)
+      end,
+    })
+    use ({
+      "zbirenbaum/copilot-cmp",
+      after = { "copilot.lua" },
+      config = function ()
+        require("copilot_cmp").setup()
+      end
+    })
+
     use("onsails/lspkind-nvim")
     use({
         "hrsh7th/nvim-cmp",
@@ -75,7 +94,8 @@ function M.register_packages(use)
     use("hrsh7th/cmp-nvim-lsp")
     use("hrsh7th/cmp-nvim-lua")
     use("hrsh7th/cmp-path")
-
+    use("f3fora/cmp-spell")
+    use("kdheepak/cmp-latex-symbols")
     use("ray-x/lsp_signature.nvim")
     use("neovim/nvim-lspconfig")
     use("jose-elias-alvarez/null-ls.nvim")
@@ -91,7 +111,10 @@ function M.register_packages(use)
             require("language.plugin_lspsaga").setup()
         end,
     })
-
+    use({
+        "iamcco/markdown-preview.nvim",
+        run = function() vim.fn["mkdp#util#install"]() end,
+    })
     --[[ use({
         "folke/todo-comments.nvim",
         config = function()
@@ -164,6 +187,16 @@ function M.register_packages(use)
         end,
     })
     use("unblevable/quick-scope")
+    -- Auto complete menu
+    use("romgrk/fzy-lua-native")
+    use ({
+        "gelguy/wilder.nvim",
+        event = "CmdlineEnter",
+        config = function()
+            require("navigation.plugin_wilder")
+        end,
+        require = { "romgrk/fzy-lua-native", after = "wilder.nvim"},
+    })
 
     use({
         "akinsho/nvim-bufferline.lua",

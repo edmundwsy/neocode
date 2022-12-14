@@ -13,7 +13,7 @@ function M.configure()
     options.set(option, "ignorecase", true)
     options.set(option, "smartcase", true)
 
-    vim.cmd([[hi QuickScopePrimary guifg='#afff5f' gui=underline ctermfg=155 cterm=underline]])
+    vim.cmd([[hi QuickScopePrimary guifg='#afff5d' gui=underline ctermfg=155 cterm=underline]])
     vim.cmd([[hi QuickScopeSecondary guifg='#5fffff' gui=underline ctermfg=81 cterm=underline]])
 
     -- mappings
@@ -28,10 +28,13 @@ function M.configure()
         ["gr"] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
         ["gx"] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
 
-        ["<leader>l"] = [[<cmd>HopChar1<cr>]],
+        ["gbc"] = [[<cmd>call VSCodeNotify('editor.action.blockComment')<cr>]],
+        ["gc"] = [[<cmd>call VSCodeNotify('editor.action.commentLine')<cr>]],
+
+        ["<leader>w"] = [[<cmd>HopChar1<cr>]],
         ["<leader>k"] = [[<cmd>HopLine<cr>]],
         ["<leader>j"] = [[<cmd>HopLine<cr>]],
-        ["<leader>w"] = [[<cmd>HopWord<cr>]],
+        ["<leader>l"] = [[<cmd>HopWord<cr>]],
     })
 end
 
@@ -44,10 +47,12 @@ function M.register_packages(use)
             require("hop").setup({})
         end,
     })
-    use({
-        "b3nj5m1n/kommentary",
+    use({"b3nj5m1n/kommentary",
         config = function()
-            require("kommentary.config")
+            require("kommentary.config").configure_language("default", {
+                prefer_single_line_comments = true,
+                use_consistent_indentation = true,
+            })
         end,
     })
     use({
