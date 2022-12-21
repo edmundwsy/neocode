@@ -17,10 +17,13 @@ end
 local function functions()
     keymaps.register("n", {
         ["<C-a>"] = [[<cmd>TodoTrouble<cr>]],
+        ["<leader>a"] = [[<cmd>Alpha<cr>]],
         ["<C-e>"] = [[<cmd>NvimTreeFocus<cr>]],
         ["<C-f>b"] = [[<cmd>lua require'telescope.builtin'.buffers()<cr>]],
         ["<C-f>p"] = [[<cmd>lua require'telescope'.extensions.project.project()<cr>]],
+        ["<leader>fp"] = [[<cmd>lua require'telescope'.extensions.project.project()<cr>]],
         ["<C-f>q"] = [[<cmd>lua require('telescope').extensions.frecency.frecency()<cr>]],
+        ["<leader>fq"] = [[<cmd>lua require('telescope').extensions.frecency.frecency()<cr>]],
         ["<C-f>d"] = [[Telescope diagnostics]],
         ["<C-f>f"] = [[<cmd>lua require'navigation.search'.git_or_local()<cr>]],
         ["<C-f>g"] = [[<cmd>lua require'telescope.builtin'.live_grep()<cr>]],

@@ -52,13 +52,6 @@ function M.register_packages(use)
             })  
         end,
     })
-    use({
-        "windwp/nvim-autopairs",
-        config = function()
-            require("language.plugin_autopairs").setup()
-        end,
-        after = "nvim-cmp",
-    })
     use ({
       "zbirenbaum/copilot.lua",
       event = "VimEnter",
@@ -82,6 +75,13 @@ function M.register_packages(use)
         config = function()
             require("language.plugin_cmp").setup()
         end,
+    })
+    use({
+        "windwp/nvim-autopairs",
+        config = function()
+            require("language.plugin_autopairs").setup()
+        end,
+        after = "nvim-cmp",
     })
     use({
         "L3MON4D3/LuaSnip",
@@ -115,12 +115,12 @@ function M.register_packages(use)
         "iamcco/markdown-preview.nvim",
         run = function() vim.fn["mkdp#util#install"]() end,
     })
-    --[[ use({
-        "folke/todo-comments.nvim",
-        config = function()
-            require("todo-comments").setup({})
-        end,
-    }) ]]
+    -- use({
+    --     "folke/todo-comments.nvim",
+    --     config = function()
+    --         require("todo-comments").setup({})
+    --     end,
+    -- })
     use({
         "norcalli/nvim-colorizer.lua",
         config = function()

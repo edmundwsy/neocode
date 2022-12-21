@@ -28,9 +28,6 @@ function M.configure()
         ["gr"] = [[<cmd>call VSCodeNotify('editor.action.rename')<cr>]],
         ["gx"] = [[<cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<cr>]],
 
-        ["gbc"] = [[<cmd>call VSCodeNotify('editor.action.blockComment')<cr>]],
-        ["gc"] = [[<cmd>call VSCodeNotify('editor.action.commentLine')<cr>]],
-
         ["<leader>w"] = [[<cmd>HopChar1<cr>]],
         ["<leader>k"] = [[<cmd>HopLine<cr>]],
         ["<leader>j"] = [[<cmd>HopLine<cr>]],
